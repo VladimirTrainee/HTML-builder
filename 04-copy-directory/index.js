@@ -43,8 +43,8 @@ async function getFiles(base, options) {
 
 const fileCopy = async (from, to) => {
 
-  return readFile(from, { encoding: 'utf-8' })
-    .then (data => writeFile(to, data, { encoding: 'utf-8' }))
+  return readFile(from)
+    .then (data => writeFile(to, data))
     .catch(e => console.log(e));
 }
 
