@@ -10,7 +10,8 @@ readdir(path.join(__dirname, folder), {withFileTypes: true})
       const name = dir.name.substring(0, dir.name.length - type.length - 1);
       stat(path.join(__dirname, folder, dir.name), (error, data) => {
         if (error) console.log(error);
-        console.log(`${name} - ${type} - ${(data.size / 1024, 3).toFixed(3)}kb`);
+        const size = (data.size / 1024).toFixed(3) ;
+        console.log(`${name} - ${type} - ${size}kb`);
       }); 
     }
   }))
